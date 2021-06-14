@@ -1,0 +1,135 @@
+---
+title: "Data Exploration and Data Visualisation"
+author: "Siti Khalidah"
+date: "6/7/2021"
+output: word_document
+---
+
+
+## Data Exploration
+
+```{r eda}
+data <- read.csv("Unemployment_Rate_Clean.csv")
+library(dplyr)
+
+#structure of dataset
+str(data)
+
+#change State as character
+data$State <- as.character(data$State)
+data$State
+
+#descriptive summary of dataset
+summary(data)
+
+#names of variables in dataset
+names(data)
+
+#type of dataset
+typeof(data)
+typeof(data$X2017)
+typeof(data$X2018)
+typeof(data$X2019)
+
+#number of rows in dataset
+nrow(data)
+
+#number of columns in dataset
+ncol(data)
+
+head(data)
+tail(data)
+
+#detect any missing values in dataset
+is.na(data)
+
+#observe the number of missing values
+sum(is.na(data))
+sum(is.na(data$X2017))
+sum(is.na(data$X2018))
+sum(is.na(data$X2019))
+
+#calculate the mean of dataset
+mean(data$X2017, na.rm = TRUE)
+mean(data$X2018, na.rm = TRUE)
+mean(data$X2019, na.rm = TRUE)
+
+#add mean dataset to data frame
+data2.1 <- select(data, c(X2017, X2018, X2019))
+data2.2 <- mutate(data2.1,Mean = rowMeans(data2.1))
+data2.3 <- select(data, c(X,State))
+data2 <- bind_cols
+
+#calculate the median of dataset
+median(data$X2017, na.rm = TRUE)
+median(data$X2018, na.rm = TRUE)
+median(data$X2019, na.rm = TRUE)
+
+#calculate the variance of dataset
+var(data$X2017, na.rm = TRUE)
+var(data$X2018, na.rm = TRUE)
+var(data$X2019, na.rm = TRUE)
+
+#calculate the standard deviation of dataset
+sd(data$X2017, na.rm = TRUE)
+sd(data$X2018, na.rm = TRUE)
+sd(data$X2019, na.rm = TRUE)
+
+#maximum value in each year (2017-2019)
+max(data$X2017, na.rm = TRUE)
+max(data$X2018, na.rm = TRUE)
+max(data$X2019, na.rm = TRUE)
+
+#minimum value in each year (2017-2019)
+min(data$X2017, na.rm = TRUE)
+min(data$X2018, na.rm = TRUE)
+min(data$X2019, na.rm = TRUE)
+
+#sort the value in each year (2017-2019)
+sort(data$X2017)
+sort(data$X2018)
+sort(data$X2019)
+```
+
+## Data Visualisation
+
+## Histogram
+
+```{r histogram}
+
+data3 <- select(data, c(X, State))
+data3
+
+#Histogram
+attach(data)
+hist(X2017,main="Unemployment Rate From Each State in Malaysia for Year 2017",col="skyblue")
+
+attach(data)
+hist(X2018,main="Unemployment Rate From Each State in Malaysia for Year 2018",col="skyblue")
+
+attach(data)
+hist(X2019,main="Unemployment Rate From Each State in Malaysia for Year 2019",col="skyblue")
+
+```
+
+## Boxplot
+
+```{r boxplot}
+#Boxplot
+data3 <- select(data, c(X, State))
+data3
+
+#Boxplot
+boxplot(X2017 ~ X, data = data3, xlab = "Year 2017",
+        ylab = "Rate", main = "Unemployment Rate of Year 2017 in Each State")
+
+boxplot(X2018 ~ X, data = data3, xlab = "Year 2018",
+        ylab = "Rate", main = "Unemployment Rate of Year 2018 in Each State")
+
+boxplot(X2019 ~ X, data = data3, xlab = "Year 2019",
+        ylab = "Rate", main = "Unemployment Rate of Year 2019 in Each State")
+
+
+
+```
+

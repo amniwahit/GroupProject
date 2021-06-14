@@ -1,0 +1,64 @@
+---
+title: "Data Cleaning"
+author: "NurAmniBahirah"
+date: "5/31/2021"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Data Cleaning
+
+First, we read the dataset file. The data has been downloaded to the working directory. We also need to select only the rows and columns that are relevant to reduce the size of the dataset.
+
+```{r}
+#set working directory
+setwd("~/R/GroupProject")
+
+#read the csv file
+data <- read.csv("unemployment_rate.csv")
+
+```
+
+
+### Data Before Cleaning
+
+The original dataset:
+
+```{r}
+#show the dataset
+data
+```
+
+We can see that the dataset contains the unemployment rate from the Year 1982 to 2019. In this project, we chose to start from the Year 2014 to 2019. Therefore, we need to clean the data. First, we rename the column to "Year", "State" and the "Unemployment_Rate". Then by using the 'dplyr' packages, we remove the unwanted rows from Year 1982 to 2013. Lastly, using transpose to clean the data.
+
+```{r}
+#rename the Columns
+names(data)[1] <- "Year"
+names(data)[2] <- "State"
+names(data)[3] <- "Unemployment_Rate"
+head(data)
+
+#remove the Years from Year 1982 to 2013
+library(dplyr)
+data2 <- anti_join(data,data[52:612,])
+data2
+```
+
+### Data After Cleaning
+
+```{r}
+#Using transpose data
+data3 <- tidyr::spread(data2, Year, Unemployment_Rate)
+data3
+```
+
+
+
+
+
+

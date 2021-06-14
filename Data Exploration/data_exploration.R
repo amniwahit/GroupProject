@@ -1,0 +1,73 @@
+data <- read.csv("Unemployment_Rate_Clean.csv")
+
+#structure of dataset
+str(data)
+
+#change State as character
+data$State <- as.character(data$State)
+data$State
+
+#descriptive summary of dataset
+summary(data)
+
+#names of variables in dataset
+names(data)
+
+#type of dataset
+typeof(data)
+typeof(data$X2017)
+typeof(data$X2018)
+typeof(data$X2019)
+
+#number of rows in dataset
+nrow(data)
+
+#number of columns in dataset
+ncol(data)
+
+head(data)
+tail(data)
+
+#detect any missing values in dataset
+is.na(data)
+
+#observe the number of missing values
+sum(is.na(data))
+sum(is.na(data$X2017))
+sum(is.na(data$X2018))
+sum(is.na(data$X2019))
+
+#calculate the mean of dataset
+mean(data$X2017, na.rm = TRUE)
+mean(data$X2018, na.rm = TRUE)
+mean(data$X2019, na.rm = TRUE)
+
+#calculate the median of dataset
+median(data$X2017, na.rm = TRUE)
+median(data$X2018, na.rm = TRUE)
+median(data$X2019, na.rm = TRUE)
+
+#calculate the variance of dataset
+var(data$X2017, na.rm = TRUE)
+var(data$X2018, na.rm = TRUE)
+var(data$X2019, na.rm = TRUE)
+
+#calculate the standard deviation of dataset
+sd(data$X2017, na.rm = TRUE)
+sd(data$X2018, na.rm = TRUE)
+sd(data$X2019, na.rm = TRUE)
+
+#maximum value in each year (2017-2019)
+max(data$X2017, na.rm = TRUE)
+max(data$X2018, na.rm = TRUE)
+max(data$X2019, na.rm = TRUE)
+
+#minimum value in each year (2017-2019)
+min(data$X2017, na.rm = TRUE)
+min(data$X2018, na.rm = TRUE)
+min(data$X2019, na.rm = TRUE)
+
+#sort the value in each year (2017-2019)
+sort(data$X2017)
+sort(data$X2018)
+sort(data$X2019)
