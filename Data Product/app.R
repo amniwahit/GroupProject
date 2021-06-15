@@ -1,7 +1,3 @@
-#A look at unemployment rate to help unemployed in selecting states that would fit them locationally and financially.
-#Provides interactive charts to display unemployment rate sorted by states and years.
-#Provide brief idea on anything related to jobs
-
 library(shiny)
 library(shinydashboard)
 library(rlang)
@@ -15,7 +11,6 @@ rate$Year2017 <- as.numeric(rate$Year2017)
 rate$Year2018 <- as.numeric(rate$Year2018)
 rate$Year2019 <- as.numeric(rate$Year2019)
 
-#This is a dashboard that displays the Unemployment rate in Malaysia. The data is retrived from the official DOSM
 
 ui <- dashboardPage(
   
@@ -88,41 +83,42 @@ ui <- dashboardPage(
                                 title = "Job Sites", status = "primary", solidHeader = TRUE,
                                 collapsible = TRUE,
                               
-                              h4("Find job opportunities in these websites"),
+                                h4("Find job opportunities in these websites"),
               
-                              h3(strong("1. LinkedIn")),
-                              tags$img(src="https://pioneerresumes.com/wp-content/uploads/2020/07/past-applicants.gif", height=250 , width=500),
-                              h5("LinkedIn is used for professional networking that includes employers posting jobs and job seekers posting their Curriculum Vitae."),
-                              tagList("Website:", a("https://my.linkedin.com/", href="https://my.linkedin.com/")),
+                                h3(strong("1. LinkedIn")),
+                                tags$img(src="https://pioneerresumes.com/wp-content/uploads/2020/07/past-applicants.gif", height=250 , width=500),
+                                h5("LinkedIn is used for professional networking that includes employers posting jobs and job seekers posting their Curriculum Vitae."),
+                                tagList("Website:", a("https://my.linkedin.com/", href="https://my.linkedin.com/")),
               
-              h3(strong("2. Jobstreet")),
-              tags$img(src="https://www.the-network.com/wp-content/uploads/browshot/jobstreet-malaysia.png", height=250 , width=500),
-              h5("Started in 1997, JobStreet is currently the largest online employment company in Southesast Asia."),
-              tagList("Website:", a("https://www.jobstreet.com.my/", href="https://www.jobstreet.com.my/")),
+                                h3(strong("2. Jobstreet")),
+                                tags$img(src="https://www.the-network.com/wp-content/uploads/browshot/jobstreet-malaysia.png", height=250 , width=500),
+                                h5("Started in 1997, JobStreet is currently the largest online employment company in Southesast Asia."),
+                                tagList("Website:", a("https://www.jobstreet.com.my/", href="https://www.jobstreet.com.my/")),
               
-              h3(strong("3. Monster")),
-              tags$img(src="https://cdn01.vulcanpost.com/wp-uploads/2017/01/monstermalaysia.com_.png", height=250 , width=500),
-              h5("Looking for a job where you can work from the comfort of your own home? There are several job opportunities that offer
-                a work-from-home set-up!"),
-              tagList("Website:", a("https://www.monster.com.my/", href="https://www.monster.com.my/")),
+                                h3(strong("3. Monster")),
+                                tags$img(src="https://cdn01.vulcanpost.com/wp-uploads/2017/01/monstermalaysia.com_.png", height=250 , width=500),
+                                h5("Looking for a job where you can work from the comfort of your own home? There are several job opportunities that offer
+                                a work-from-home set-up!"),
+                                tagList("Website:", a("https://www.monster.com.my/", href="https://www.monster.com.my/")),
               
-              h3(strong("4. MauKerja")),
-              tags$img(src="http://infojimat.com/wp-content/uploads/2021/02/4.png", height=250 , width=500),
-              h5("An exciting solution that benefit both business owners and job seekers is provided by MauKerja."),
-              tagList("Website:", a("https://www.maukerja.my/", href="https://www.maukerja.my/")),
+                                h3(strong("4. MauKerja")),
+                                tags$img(src="http://infojimat.com/wp-content/uploads/2021/02/4.png", height=250 , width=500),
+                                h5("An exciting solution that benefit both business owners and job seekers is provided by MauKerja."),
+                                tagList("Website:", a("https://www.maukerja.my/", href="https://www.maukerja.my/")),
               
-              h3(strong("5. Wobb.my")),
-              tags$img(src="https://assets.wobbjobs.com/images/faq/img2-a.jpg", height=250 , width=500),
-              h5("Working On Bean Bags (Wobb) lists employers according to their companies, and job hunters are able to have a sneak peek of the 
-              interior of the office and also a closer look at the people and working culture before sending in their applications."),
-              tagList("Website:", a("https://my.wobbjobs.com/", href="https://my.wobbjobs.com/")),
-                       ), #End box
+                                h3(strong("5. Wobb.my")),
+                                tags$img(src="https://assets.wobbjobs.com/images/faq/img2-a.jpg", height=250 , width=500),
+                                h5("Working On Bean Bags (Wobb) lists employers according to their companies, and job hunters are able to have a sneak peek of the 
+                                interior of the office and also a closer look at the people and working culture before sending in their applications."),
+                                tagList("Website:", a("https://my.wobbjobs.com/", href="https://my.wobbjobs.com/")),
+                        ), #End box
               
               box(
                 width = 12, 
                 title = "Interview", status = "primary", solidHeader = TRUE,
                 collapsible = TRUE,
-                img(src = "https://www.thebalancecareers.com/thmb/RFUaH4oaj1t0d_AHaggGJJBiIj8=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/top-interview-tips-2058577_FINAL-5b7339fb46e0fb0050b4b20d.png", height = 350, width = 500),
+                img(src = "https://www.thebalancecareers.com/thmb/RFUaH4oaj1t0d_AHaggGJJBiIj8=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/top-interview-tips-2058577_FINAL-5b7339fb46e0fb0050b4b20d.png", 
+                    height = 350, width = 500),
               ),
               
               box(
