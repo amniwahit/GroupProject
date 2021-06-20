@@ -27,11 +27,11 @@ The user of the shiny app can look at each of these data subsets graphically. Fo
 
 ## How to use the app
 
-![Screenshot](Screenshot1.PNG)   
+![Screenshot](Screenshot1.png)   
 
 The sidebar panel is where the tabs are located. In the Dashboard tab, interactive charts/plots are provided to display unemployment rate sorted by states and years. User can select a column plot or dot plot. Other than that, user can select a year and, as an option, user can select the background color of the result that suit their preference.
  
-![Screenshot](Screenshot2.PNG)  
+![Screenshot](Screenshot2.png)  
 
 In the Extra tab, the formula of the unemployment rate and some job related stuff are provided. User can check out the job sites, interview tips, resume and Curriculum Vitae.    
 
